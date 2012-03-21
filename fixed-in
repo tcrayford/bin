@@ -1,0 +1,4 @@
+#!/bin/bash
+
+hash=`git head | strip-dem-colors | cut -f 2 -d ' '`
+echo -n "Fixed in $hash" | pbcopy
