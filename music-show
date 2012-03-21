@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+mpc | head -n 1 | growlnotify

@@ -1,0 +1,11 @@
+#!/bin/zsh
+
+diskutil erasevolume HFS+ "ramdisk" `hdiutil attach -nomount ram://262144`
+
+cp -r /usr/local/var/postgres/ /usr/local/var/postgres.backup
+
+rm -rf /usr/local/var/postgres
+
+cp -r /usr/local/var/postgres.backup /Volumes/ramdisk/
+
+ln -s /Volumes/ramdisk /usr/local/var/postgres

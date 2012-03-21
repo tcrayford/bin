@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby -wKU
+# encoding: UTF-8
+
+# prints out the last 15 git branches you used
+
+reflog = IO.popen('git reflog')
+$branches = []
+
+def add_branch(b)
+  $branches << b unless $branches.include? b
+end
+  
+all_branches = IO.popen('git branch').readlines.map { |x| x.gsub('* ', '').strip }
+
+reflog.readlines.each do |line|
+  if line.match(/moving from (\S+) to (\S+)/)
+    add_branch($1) if all_branches.include? $1
+    add_branch($2) if all_branches.include? $2
+  end
+  
+  break if $branches.size > 15
+end
+
+puts "* #{$branches[0]}"
+$branches.drop(1).each { |b| puts b }
