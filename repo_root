@@ -1,0 +1,2 @@
+#!/bin/bash
+git remote -v | grep "origin.*push" | cut -f 2 -d '@' | cut -f 1 -d ' ' | sed -e 's/\.git//' -e 's/:/\//'

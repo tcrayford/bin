@@ -8,8 +8,4 @@ function open_branch {
   open "https://`repo_root`/tree/`parse_git_branch`"
 }
 
-function repo_root {
-  git remote -v | grep "origin.*push" | cut -f 2 -d '@' | cut -f 1 -d ' ' | sed -e 's/\.git//' -e 's/:/\//'
-}
-
 open_branch
