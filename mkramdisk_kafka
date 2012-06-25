@@ -1,0 +1,11 @@
+#!/bin/zsh
+
+diskutil erasevolume HFS+ "ramdisk.kafka" `hdiutil attach -nomount ram://262144`
+
+cp -r /tmp/kafka-logs/ /tmp/kafka-logs.backup/
+
+rm -rf /tmp/kafka-logs/
+
+cp -r /tmp/kafka-logs.backup /Volumes/ramdisk.kafka/
+
+ln -s /Volumes/ramdisk.kafka /tmp/kafka-logs
