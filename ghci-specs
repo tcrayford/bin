@@ -1,0 +1,3 @@
+#!/bin/sh
+
+cat ~/bin/ghci-rerun.script | osascript

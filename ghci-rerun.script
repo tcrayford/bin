@@ -1,0 +1,6 @@
+tell application "System Events" to key code 123 using {command down, option down}
+tell application "System Events" to keystroke ":r"
+tell application "System Events" to keystroke return
+tell application "System Events" to keystroke "main"
+tell application "System Events" to keystroke return
+tell application "System Events" to key code 124 using {command down, option down}
