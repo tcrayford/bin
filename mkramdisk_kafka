@@ -9,3 +9,8 @@ rm -rf /tmp/kafka-logs/
 cp -r /tmp/kafka-logs.backup /Volumes/ramdisk.kafka/
 
 ln -s /Volumes/ramdisk.kafka /tmp/kafka-logs
+
+rm -r /tmp/kafka-logs/.fseventsd/
+rm -r /tmp/kafka-logs/.Trashes/
+
+

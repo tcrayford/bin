@@ -1,0 +1,3 @@
+#!/bin/zsh 
+
+git push -u origin `~/bin/git-current-branch`

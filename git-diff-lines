@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+echo "args:"
+echo "$1"
+
+echo "things"
+echo `dirname $1`
+
+(cd `dirname $1` && git diff -U0 $1 | ~/bin/diff-lines | cut -f 2,3 -d ':')
